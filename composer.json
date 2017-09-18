@@ -1,0 +1,35 @@
+{
+    "name": "laravel-validation-rules/credit-card",
+    "description": "Validate credit card number, expiration date, cvc",
+    "type": "laravel, validation, credit card",
+    "require": {
+        "illuminate/validation": "^5.5",
+        "illuminate/translation": "^5.5"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "~2.0",
+        "phpunit/phpunit": "~6.0",
+        "orchestra/testbench": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "LVR\\CreditCard\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LVR\\CreditCard\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "cs-fix": "php-cs-fixer fix . --rules=@PSR2",
+        "test": "phpunit --colors=always"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "Darius Matulionis",
+            "email": "darius@matulionis.lt"
+        }
+    ]
+}
