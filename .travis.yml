@@ -1,13 +1,17 @@
 language: php
 
-php:
-  - 7.0
-  - 7.1
-
+git:
+  depth: 1
 env:
-  matrix:
-    - COMPOSER_FLAGS="--prefer-lowest"
-    - COMPOSER_FLAGS=""
+  global:
+  - DEFAULT_COMPOSER_FLAGS="--no-interaction --no-progress --optimize-autoloader"
+  - REPORT_TESTS_COVERAGE=0
+matrix:
+  fast_finish: true
+  include:
+  - php: 7.0
+  - php: 7.1
+    env: REPORT_TESTS_COVERAGE=1
 
 cache:
   directories:
@@ -23,5 +27,5 @@ script:
   - vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover
 
 after_script:
-  - wget https://scrutinizer-ci.com/ocular.phar
-  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+  - if [ $REPORT_TESTS_COVERAGE == 1 ]; then wget https://scrutinizer-ci.com/ocular.phar; fi
+  - if [ $REPORT_TESTS_COVERAGE == 1 ]; then php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi

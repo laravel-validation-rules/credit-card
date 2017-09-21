@@ -7,8 +7,8 @@
         "illuminate/translation": "^5.5"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "~2.0",
-        "phpunit/phpunit": "~6.0",
+        "friendsofphp/php-cs-fixer": "~2.6",
+        "phpunit/phpunit": "6.2.*",
         "orchestra/testbench": "^3.5"
     },
     "autoload": {
@@ -22,7 +22,7 @@
         }
     },
     "scripts": {
-        "cs-fix": "php-cs-fixer fix . --rules=@PSR2",
+        "cs-fix": "php-cs-fixer fix .",
         "test": "phpunit --colors=always"
     },
     "license": "Apache-2.0",
@@ -31,5 +31,9 @@
             "name": "Darius Matulionis",
             "email": "darius@matulionis.lt"
         }
-    ]
+    ],
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    }
 }
