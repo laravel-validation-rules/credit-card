@@ -231,7 +231,7 @@ abstract class Card
      */
     protected function validPattern()
     {
-        return ! ! preg_match(static::$pattern, $this->card_number);
+        return (bool) preg_match(static::$pattern, $this->card_number);
     }
 
     /**

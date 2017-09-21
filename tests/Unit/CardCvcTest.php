@@ -57,6 +57,7 @@ class CardCvcTest extends TestCase
         $this->assertFalse(Card::isValidCvcLength('12345'));
         $this->assertFalse(Card::isValidCvcLength('123455'));
     }
+
     /**
      * @param string|int $cvc
      *
