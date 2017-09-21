@@ -123,6 +123,7 @@ class CardExpirationTest extends TestCase
         $this->assertFalse(Card::isValidExpirationDate('', date('m')));
         $this->assertFalse(Card::isValidExpirationDate(date('Y'), ''));
     }
+
     /**
      * @param string $year
      *
