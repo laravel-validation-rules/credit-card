@@ -32,7 +32,7 @@ class Jcb extends Card implements CreditCard
      *
      * @var array
      */
-    protected $number_length = [16];
+    protected $number_length = [16, 17, 18, 19];
 
     /**
      * CVC code length's.
