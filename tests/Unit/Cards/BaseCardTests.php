@@ -111,7 +111,8 @@ abstract class BaseCardTests extends TestCase
             $this->assertTrue($validator->fails());
             $this->assertEquals(
                 CardNumber::MSG_CARD_LENGTH_INVALID,
-                $validator->messages()->first()
+                $validator->messages()->first(),
+                sprintf('The number: "%s" is not recognised as invalid length', $number)
             );
         });
     }

@@ -3,6 +3,8 @@
 namespace LVR\CreditCard\Tests\Unit;
 
 use LVR\CreditCard\Cards\Card;
+use LVR\CreditCard\Exceptions\CreditCardExpirationDateException;
+use LVR\CreditCard\ExpirationDateValidator;
 use LVR\CreditCard\Tests\TestCase;
 use LVR\CreditCard\CardExpirationDate;
 use LVR\CreditCard\CardExpirationYear;
@@ -118,11 +120,30 @@ class CardExpirationTest extends TestCase
     /** @test **/
     public function it_can_be_called_directly()
     {
-        $this->assertTrue(Card::isValidExpirationDate(date('Y'), date('m')));
-        $this->assertFalse(Card::isValidExpirationDate('', ''));
-        $this->assertFalse(Card::isValidExpirationDate('', date('m')));
-        $this->assertFalse(Card::isValidExpirationDate(date('Y'), ''));
+        $this->assertTrue(ExpirationDateValidator::validate(date('Y'), date('m')));
     }
+
+    /** @test **/
+    public function it_throws_exception_if_year_is_empty()
+    {
+        $this->expectException(CreditCardExpirationDateException::class);
+        $this->assertFalse(ExpirationDateValidator::validate('', date('m')));
+    }
+
+    /** @test **/
+    public function it_throws_exception_if_month_is_empty()
+    {
+        $this->expectException(CreditCardExpirationDateException::class);
+        $this->assertFalse(ExpirationDateValidator::validate(date('y'), ''));
+    }
+
+    /** @test **/
+    public function it_throws_exception_if_year_and_month_is_empty()
+    {
+        $this->expectException(CreditCardExpirationDateException::class);
+        $this->assertFalse(ExpirationDateValidator::validate('', ''));
+    }
+
 
     /**
      * @param string $year

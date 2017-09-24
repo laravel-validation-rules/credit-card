@@ -159,36 +159,6 @@ abstract class Card
     }
 
     /**
-     * @param string $year
-     * @param string $month
-     *
-     * @return bool
-     */
-    public static function isValidExpirationDate(string $year, string $month)
-    {
-        if ($year == '' || $month == '') {
-            return false;
-        }
-
-        $month = str_pad($month, 2, '0', STR_PAD_LEFT);
-
-        if (! preg_match('/^20\d\d$/', $year)) {
-            return false;
-        }
-
-        if (! preg_match('/^(0[1-9]|1[0-2])$/', $month)) {
-            return false;
-        }
-
-        // past date
-        if ($year < date('Y') || $year == date('Y') && $month < date('m')) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
      * @throws \LVR\CreditCard\Exceptions\CreditCardException
      */
     protected function checkImplementation()

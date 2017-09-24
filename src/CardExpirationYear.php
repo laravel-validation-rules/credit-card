@@ -2,7 +2,6 @@
 
 namespace LVR\CreditCard;
 
-use LVR\CreditCard\Cards\Card;
 use Illuminate\Contracts\Validation\Rule;
 
 class CardExpirationYear implements Rule
@@ -36,7 +35,12 @@ class CardExpirationYear implements Rule
      */
     public function passes($attribute, $value)
     {
-        return Card::isValidExpirationDate($value, $this->month);
+        try {
+            return (new ExpirationDateValidator($value, $this->month))
+                ->isValid();
+        } catch (\Exception $e) {
+            return false;
+        };
     }
 
     /**

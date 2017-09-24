@@ -97,7 +97,13 @@ $request->validate(
 ```
 #### Directly
 ```php
-LVR\CreditCard\Cards\Card::isValidExpirationDate(
+LVR\CreditCard\Cards\ExpirationDateValidator(
+    $expiration_year,
+    $expiration_month
+)->isValid();
+
+// Or static
+LVR\CreditCard\Cards\ExpirationDateValidator::validate(
     $expiration_year,
     $expiration_month
 );

@@ -2,8 +2,7 @@
 
 namespace LVR\CreditCard;
 
-use Illuminate\Support\Carbon;
-use LVR\CreditCard\Cards\Card;
+use Carbon\Carbon;
 use Illuminate\Contracts\Validation\Rule;
 
 class CardExpirationDate implements Rule
@@ -44,7 +43,8 @@ class CardExpirationDate implements Rule
         try {
             $date = Carbon::createFromFormat($this->format, $value);
 
-            return Card::isValidExpirationDate($date->year, $date->month);
+            return (new ExpirationDateValidator($date->year, $date->month))
+                ->isValid();
         } catch (\InvalidArgumentException $ex) {
             $this->message = static::MSG_CARD_EXPIRATION_DATE_FORMAT_INVALID;
 

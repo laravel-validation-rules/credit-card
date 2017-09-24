@@ -117,6 +117,8 @@ class JcbTest extends BaseCardTests
             '3587718314676794',
             '3500278409448074',
             '3509173789871493',
+            '3540285570643435',
+            '3529205926839081290',
         ]);
     }
 
@@ -128,7 +130,7 @@ class JcbTest extends BaseCardTests
         return collect([
             '353011',
             '356600202036050',
-            '35660020203605051',
+            '35292059268390812901',
         ]);
     }
 
@@ -138,8 +140,9 @@ class JcbTest extends BaseCardTests
     public function numbersWithInvalidCheckSum(): Collection
     {
         return collect([
-            '3530111333300001',
-            '3566002020360504',
+            '3509173789871492',
+            '3540285570643434',
+            '3529205926839081292',
         ]);
     }
 }
