@@ -1,4 +1,4 @@
-# [WIP] Laravel Validator Rules - Credit Card
+# Laravel Validator Rules - Credit Card
 
 This rule will validate that a given credit card **number**, **expiration date** or **cvc** is valid.
 
