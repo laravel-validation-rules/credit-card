@@ -177,13 +177,13 @@ abstract class Card
             );
         }
 
-        if (! $this->number_length || ! is_array($this->number_length)) {
+        if (empty($this->number_length) || ! is_array($this->number_length)) {
             throw new CreditCardLengthException(
                 'Credit card number length is missing or is not an array'
             );
         }
 
-        if (! $this->cvc_length || ! is_array($this->cvc_length)) {
+        if (empty($this->cvc_length) || ! is_array($this->cvc_length)) {
             throw new CreditCardCvcException(
                 'Credit card cvc code length is missing or is not an array'
             );

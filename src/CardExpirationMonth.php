@@ -40,7 +40,7 @@ class CardExpirationMonth implements Rule
                 ->isValid();
         } catch (\Exception $e) {
             return false;
-        };
+        }
     }
 
     /**

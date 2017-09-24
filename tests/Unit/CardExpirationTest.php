@@ -2,14 +2,13 @@
 
 namespace LVR\CreditCard\Tests\Unit;
 
-use LVR\CreditCard\Cards\Card;
-use LVR\CreditCard\Exceptions\CreditCardExpirationDateException;
-use LVR\CreditCard\ExpirationDateValidator;
 use LVR\CreditCard\Tests\TestCase;
 use LVR\CreditCard\CardExpirationDate;
 use LVR\CreditCard\CardExpirationYear;
 use LVR\CreditCard\CardExpirationMonth;
 use Illuminate\Support\Facades\Validator;
+use LVR\CreditCard\ExpirationDateValidator;
+use LVR\CreditCard\Exceptions\CreditCardExpirationDateException;
 
 class CardExpirationTest extends TestCase
 {
@@ -143,7 +142,6 @@ class CardExpirationTest extends TestCase
         $this->expectException(CreditCardExpirationDateException::class);
         $this->assertFalse(ExpirationDateValidator::validate('', ''));
     }
-
 
     /**
      * @param string $year
