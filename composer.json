@@ -8,7 +8,8 @@
     },
     "require-dev": {
         "php": ">=7.0.0",
-        "phpunit/phpunit": "~6.0",
+        "friendsofphp/php-cs-fixer": "~2.5",
+        "phpunit/phpunit": "6.2.*",
         "orchestra/testbench": "^3.5"
     },
     "autoload": {
@@ -33,7 +34,8 @@
         }
     ],
     "config": {
-        "preferred-install": "dist",
-        "sort-packages": true
+      "platform": {"php": "7.0"},
+      "preferred-install": "dist",
+      "sort-packages": true
     }
 }

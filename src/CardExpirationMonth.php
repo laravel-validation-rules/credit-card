@@ -35,12 +35,8 @@ class CardExpirationMonth implements Rule
      */
     public function passes($attribute, $value)
     {
-        try {
-            return (new ExpirationDateValidator($this->year, $value))
-                ->isValid();
-        } catch (\Exception $e) {
-            return false;
-        }
+        return (new ExpirationDateValidator($this->year, $value))
+            ->isValid();
     }
 
     /**

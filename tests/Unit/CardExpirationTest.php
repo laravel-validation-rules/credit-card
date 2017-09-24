@@ -16,6 +16,7 @@ class CardExpirationTest extends TestCase
     public function it_checks_expiration_year()
     {
         // Invalid year
+        $this->assertFalse($this->yearValidator(' ')->passes());
         $this->assertFalse($this->yearValidator(1)->passes());
         $this->assertFalse($this->yearValidator(1900)->passes());
         $this->assertFalse($this->yearValidator(2010)->passes());
@@ -38,6 +39,7 @@ class CardExpirationTest extends TestCase
     public function it_checks_expiration_month()
     {
         // Invalid month
+        $this->assertFalse($this->monthValidator('')->passes());
         $this->assertFalse($this->monthValidator(13)->passes());
         $this->assertFalse($this->monthValidator(0)->passes());
         $this->assertFalse($this->monthValidator(20)->passes());
@@ -119,28 +121,10 @@ class CardExpirationTest extends TestCase
     /** @test **/
     public function it_can_be_called_directly()
     {
-        $this->assertTrue(ExpirationDateValidator::validate(date('Y'), date('m')));
-    }
-
-    /** @test **/
-    public function it_throws_exception_if_year_is_empty()
-    {
-        $this->expectException(CreditCardExpirationDateException::class);
         $this->assertFalse(ExpirationDateValidator::validate('', date('m')));
-    }
-
-    /** @test **/
-    public function it_throws_exception_if_month_is_empty()
-    {
-        $this->expectException(CreditCardExpirationDateException::class);
         $this->assertFalse(ExpirationDateValidator::validate(date('y'), ''));
-    }
-
-    /** @test **/
-    public function it_throws_exception_if_year_and_month_is_empty()
-    {
-        $this->expectException(CreditCardExpirationDateException::class);
-        $this->assertFalse(ExpirationDateValidator::validate('', ''));
+        $this->assertFalse(ExpirationDateValidator::validate(' ', ' '));
+        $this->assertTrue(ExpirationDateValidator::validate(date('Y'), date('m')));
     }
 
     /**
