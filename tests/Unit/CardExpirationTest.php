@@ -8,7 +8,6 @@ use LVR\CreditCard\CardExpirationYear;
 use LVR\CreditCard\CardExpirationMonth;
 use Illuminate\Support\Facades\Validator;
 use LVR\CreditCard\ExpirationDateValidator;
-use LVR\CreditCard\Exceptions\CreditCardExpirationDateException;
 
 class CardExpirationTest extends TestCase
 {

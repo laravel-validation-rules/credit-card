@@ -3,7 +3,6 @@
 namespace LVR\CreditCard;
 
 use Carbon\Carbon;
-use LVR\CreditCard\Exceptions\CreditCardExpirationDateException;
 
 class ExpirationDateValidator
 {
@@ -22,7 +21,6 @@ class ExpirationDateValidator
      *
      * @param string $year
      * @param string $month
-     *
      */
     public function __construct(string $year, string $month)
     {
