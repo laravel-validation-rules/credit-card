@@ -20,7 +20,7 @@ class CardExpirationMonth implements Rule
      *
      * @param string $year
      */
-    public function __construct(string $year)
+    public function __construct($year)
     {
         $this->year = $year;
     }
@@ -46,6 +46,6 @@ class CardExpirationMonth implements Rule
      */
     public function message()
     {
-        return static::MSG_CARD_EXPIRATION_MONT_INVALID;
+        return trans(static::MSG_CARD_EXPIRATION_MONT_INVALID);
     }
 }

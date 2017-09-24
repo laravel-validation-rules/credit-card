@@ -18,7 +18,7 @@ class CardCvc implements Rule
      */
     protected $card_number;
 
-    public function __construct(string $card_number)
+    public function __construct($card_number)
     {
         $this->message = static::MSG_CARD_CVC_INVALID;
         $this->card_number = $card_number;
@@ -48,6 +48,6 @@ class CardCvc implements Rule
      */
     public function message()
     {
-        return $this->message;
+        return trans($this->message);
     }
 }

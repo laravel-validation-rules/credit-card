@@ -61,6 +61,6 @@ class CardExpirationDate implements Rule
      */
     public function message()
     {
-        return $this->message;
+        return trans($this->message);
     }
 }
