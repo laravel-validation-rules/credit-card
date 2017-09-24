@@ -12,7 +12,7 @@ This rule will validate that a given credit card **number**, **expiration date**
   <a href="https://scrutinizer-ci.com/g/laravel-validation-rules/credit-card">
     <img src="https://img.shields.io/scrutinizer/g/laravel-validation-rules/credit-card.svg?style=flat-square">
   </a>
-  <a href="https://github.com/laravel-validation-rules/credit-cards/blob/master/LICENSE">
+  <a href="https://github.com/laravel-validation-rules/credit-card/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/laravel-validation-rules/credit-card.svg?style=flat-square">
   </a>
   <a href="https://twitter.com/DarkaOnLine">
