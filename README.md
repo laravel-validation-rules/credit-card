@@ -6,7 +6,7 @@ This rule will validate that a given credit card **number**, **expiration date**
   <a href="https://travis-ci.org/laravel-validation-rules/credit-card">
     <img src="https://img.shields.io/travis/laravel-validation-rules/credit-card.svg?style=flat-square">
   </a>
-  <a href="https://scrutinizer-ci.com/g/laravel-validation-rules/credit-cards/code-structure/master/code-coverage">
+  <a href="https://scrutinizer-ci.com/g/laravel-validation-rules/credit-card/code-structure/master/code-coverage">
     <img src="https://img.shields.io/scrutinizer/coverage/g/laravel-validation-rules/credit-card.svg?style=flat-square">
   </a>
   <a href="https://scrutinizer-ci.com/g/laravel-validation-rules/credit-card">
