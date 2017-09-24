@@ -15,8 +15,11 @@ This rule will validate that a given credit card **number**, **expiration date**
   <a href="https://github.com/laravel-validation-rules/credit-card/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/laravel-validation-rules/credit-card.svg?style=flat-square">
   </a>
+  <a href="https://packagist.org/packages/laravel-validation-rules/credit-card">
+      <img src="https://img.shields.io/packagist/dt/laravel-validation-rules/credit-card.svg?style=flat-square">
+  </a>
   <a href="https://twitter.com/DarkaOnLine">
-    <img src="http://img.shields.io/badge/author-@clarkeash-blue.svg?style=flat-square">
+    <img src="http://img.shields.io/badge/author-@DarkaOnLine-blue.svg?style=flat-square">
   </a>
 </p>
 
