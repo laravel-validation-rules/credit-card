@@ -8,8 +8,7 @@
     },
     "require-dev": {
         "php": ">=7.0.0",
-        "friendsofphp/php-cs-fixer": "2.2.*",
-        "phpunit/phpunit": "6.2.*",
+        "phpunit/phpunit": "~6.0",
         "orchestra/testbench": "^3.5"
     },
     "autoload": {
