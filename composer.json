@@ -1,7 +1,8 @@
 {
     "name": "laravel-validation-rules/credit-card",
     "description": "Validate credit card number, expiration date, cvc",
-    "type": "laravel, validation, credit card",
+    "type": "library",
+    "keywords": [ "laravel", "validation", "credit card", "validator" ],
     "require": {
         "illuminate/validation": "^5.5",
         "illuminate/translation": "^5.5"
