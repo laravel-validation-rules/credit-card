@@ -124,7 +124,20 @@ class CardExpirationTest extends TestCase
         $this->assertFalse(ExpirationDateValidator::validate(date('y'), ''));
         $this->assertFalse(ExpirationDateValidator::validate(' ', ' '));
         $this->assertTrue(ExpirationDateValidator::validate(date('Y'), date('m')));
+        $this->assertTrue(ExpirationDateValidator::validate(date('y'), date('m')));
     }
+
+    /** @test **/
+    public function it_validates_two_digits_year_format()
+    {
+        $validator = Validator::make(
+            ['expiration_year' => date('y')],
+            ['expiration_year' => ['required', new CardExpirationYear(date('m'))]]
+        );
+
+        $this->assertTrue($validator->passes());
+    }
+
 
     /**
      * @param string $year

@@ -24,8 +24,26 @@ class ExpirationDateValidator
      */
     public function __construct(string $year, string $month)
     {
-        $this->year = trim($year);
+        $this->setYear($year);
         $this->month = trim($month);
+    }
+
+    /**
+     * @param $year
+     *
+     * @return $this
+     */
+    protected function setYear($year)
+    {
+        $year = trim($year);
+
+        if (strlen($year) == 2) {
+            $year = substr(date('Y'), 0, 2) . $year;
+        }
+
+        $this->year = $year;
+
+        return $this;
     }
 
     /**
@@ -62,8 +80,10 @@ class ExpirationDateValidator
      */
     protected function isValidYear()
     {
+        $test = '/^'.substr(date('Y'), 0, 2).'\d\d$/';
+
         return $this->year != ''
-            && preg_match('/^20\d\d$/', $this->year);
+            && preg_match($test, $this->year);
     }
 
     /**
