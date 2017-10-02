@@ -138,7 +138,6 @@ class CardExpirationTest extends TestCase
         $this->assertTrue($validator->passes());
     }
 
-
     /**
      * @param string $year
      *

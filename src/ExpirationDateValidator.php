@@ -38,7 +38,7 @@ class ExpirationDateValidator
         $year = trim($year);
 
         if (strlen($year) == 2) {
-            $year = substr(date('Y'), 0, 2) . $year;
+            $year = substr(date('Y'), 0, 2).$year;
         }
 
         $this->year = $year;
