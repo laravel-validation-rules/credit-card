@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Rule;
 
 class CardExpirationYear implements Rule
 {
-    const MSG_CARD_EXPIRATION_YEAR_INVALID = 'validation.credit_card.card_expiation_year_invalid';
+    const MSG_CARD_EXPIRATION_YEAR_INVALID = 'validation.credit_card.card_expiration_year_invalid';
 
     /**
      * Month field name.
