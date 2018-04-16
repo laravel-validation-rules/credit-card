@@ -7,8 +7,8 @@ use Illuminate\Contracts\Validation\Rule;
 
 class CardExpirationDate implements Rule
 {
-    const MSG_CARD_EXPIRATION_DATE_INVALID = 'validation.credit_card.card_expiation_date_invalid';
-    const MSG_CARD_EXPIRATION_DATE_FORMAT_INVALID = 'validation.credit_card.card_expiation_date_format_invalid';
+    const MSG_CARD_EXPIRATION_DATE_INVALID = 'validation.credit_card.card_expiration_date_invalid';
+    const MSG_CARD_EXPIRATION_DATE_FORMAT_INVALID = 'validation.credit_card.card_expiration_date_format_invalid';
 
     protected $message;
 
