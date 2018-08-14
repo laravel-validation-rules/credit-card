@@ -34,6 +34,13 @@ abstract class Card
     protected $name;
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand;
+
+    /**
      * Card number length's.
      *
      * @var array
@@ -129,6 +136,22 @@ abstract class Card
     public function type()
     {
         return $this->type;
+    }
+
+    /**
+     * @return string
+     */
+    public function name()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function brand()
+    {
+        return $this->brand;
     }
 
     /**

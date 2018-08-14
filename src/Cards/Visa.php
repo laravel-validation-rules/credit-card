@@ -28,6 +28,13 @@ class Visa extends Card implements CreditCard
     protected $name = 'visa';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'Visa';
+
+    /**
      * Card number length's.
      *
      * @var array

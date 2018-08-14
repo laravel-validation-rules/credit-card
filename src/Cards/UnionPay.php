@@ -28,6 +28,13 @@ class UnionPay extends Card implements CreditCard
     protected $name = 'unionpay';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'Union Pay';
+
+    /**
      * Card number length's.
      *
      * @var array

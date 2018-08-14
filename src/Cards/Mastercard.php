@@ -28,6 +28,13 @@ class Mastercard extends Card implements CreditCard
     protected $name = 'mastercard';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'Mastercard';
+
+    /**
      * Card number length's.
      *
      * @var array

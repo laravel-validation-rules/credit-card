@@ -28,6 +28,13 @@ class Maestro extends Card implements CreditCard
     protected $name = 'maestro';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'Maestro';
+
+    /**
      * Card number length's.
      *
      * @var array

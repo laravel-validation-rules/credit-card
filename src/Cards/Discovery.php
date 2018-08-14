@@ -28,6 +28,13 @@ class Discovery extends Card implements CreditCard
     protected $name = 'discover';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'Discovery';
+
+    /**
      * Card number length's.
      *
      * @var array
