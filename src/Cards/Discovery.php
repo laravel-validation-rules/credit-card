@@ -32,7 +32,7 @@ class Discovery extends Card implements CreditCard
      *
      * @var string
      */
-    protected $brand = 'Discovery';
+    protected $brand = 'Discover';
 
     /**
      * Card number length's.
