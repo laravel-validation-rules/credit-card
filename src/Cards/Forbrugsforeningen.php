@@ -28,6 +28,13 @@ class Forbrugsforeningen extends Card implements CreditCard
     protected $name = 'forbrugsforeningen';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'Forbrugsforeningen';
+
+    /**
      * Card number length's.
      *
      * @var array

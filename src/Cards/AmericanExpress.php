@@ -28,6 +28,13 @@ class AmericanExpress extends Card implements CreditCard
     protected $name = 'amex';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'American Express';
+
+    /**
      * Card number length's.
      *
      * @var array

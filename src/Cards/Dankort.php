@@ -28,6 +28,13 @@ class Dankort extends Card implements CreditCard
     protected $name = 'dankort';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'Dankort';
+
+    /**
      * Card number length's.
      *
      * @var array

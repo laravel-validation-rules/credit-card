@@ -28,6 +28,13 @@ class Jcb extends Card implements CreditCard
     protected $name = 'jcb';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'JCB';
+
+    /**
      * Card number length's.
      *
      * @var array

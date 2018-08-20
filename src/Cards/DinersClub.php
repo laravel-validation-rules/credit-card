@@ -28,6 +28,13 @@ class DinersClub extends Card implements CreditCard
     protected $name = 'dinersclub';
 
     /**
+     * Brand name.
+     *
+     * @var string
+     */
+    protected $brand = 'Diners Club International';
+
+    /**
      * Card number length's.
      *
      * @var array
