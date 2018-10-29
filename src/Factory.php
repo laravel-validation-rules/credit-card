@@ -3,6 +3,7 @@
 namespace LVR\CreditCard;
 
 use LVR\CreditCard\Cards\Jcb;
+use LVR\CreditCard\Cards\Mir;
 use LVR\CreditCard\Cards\Visa;
 use LVR\CreditCard\Cards\Dankort;
 use LVR\CreditCard\Cards\Maestro;
@@ -31,6 +32,7 @@ class Factory
         Mastercard::class,
         UnionPay::class,
         Visa::class,
+        Mir::class,
     ];
 
     /**
