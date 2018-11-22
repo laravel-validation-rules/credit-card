@@ -32,6 +32,7 @@ abstract class BaseCardTests extends TestCase
         UnionPayTest::class,
         VisaTest::class,
         MirTest::class,
+        EloTest::class,
     ];
 
     /** @test **/

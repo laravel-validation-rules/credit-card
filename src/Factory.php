@@ -14,6 +14,7 @@ use LVR\CreditCard\Cards\Mastercard;
 use LVR\CreditCard\Cards\VisaElectron;
 use LVR\CreditCard\Cards\AmericanExpress;
 use LVR\CreditCard\Cards\Forbrugsforeningen;
+use LVR\CreditCard\Cards\Elo;
 use LVR\CreditCard\Exceptions\CreditCardException;
 
 class Factory
@@ -33,6 +34,7 @@ class Factory
         UnionPay::class,
         Visa::class,
         Mir::class,
+        Elo::class,
     ];
 
     /**
