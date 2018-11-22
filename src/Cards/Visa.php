@@ -11,7 +11,7 @@ class Visa extends Card implements CreditCard
      *
      * @var string
      */
-    public static $pattern = '/^4/';
+    public static $pattern = '/^4[0-9]{12}(?:[0-9]{3})/';
 
     /**
      * Credit card type.
