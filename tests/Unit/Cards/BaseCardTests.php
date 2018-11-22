@@ -28,6 +28,7 @@ abstract class BaseCardTests extends TestCase
         DinersClubTest::class,
         DiscoveryTest::class,
         JcbTest::class,
+        HipercardTest::class,
         MastercardTest::class,
         UnionPayTest::class,
         VisaTest::class,
