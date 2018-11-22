@@ -29,7 +29,7 @@ class HipercardTest extends BaseCardTests
         return collect([
             '606282011',
             '6062832113',
-            '3841001111222233334512'
+            '3841001111222233334512',
         ]);
     }
 
