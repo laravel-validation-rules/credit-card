@@ -27,7 +27,7 @@ class HipercardTest extends BaseCardTests
     public function numbersWithInvalidLength(): Collection
     {
         return collect([
-            '606282604342728',
+            '60628260434272857',
         ]);
     }
 
