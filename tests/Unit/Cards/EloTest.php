@@ -2,8 +2,8 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
-use Illuminate\Support\Collection;
 use LVR\CreditCard\Cards\Elo;
+use Illuminate\Support\Collection;
 
 class EloTest extends BaseCardTests
 {
@@ -18,7 +18,7 @@ class EloTest extends BaseCardTests
             '6362970000457013',
             '6363684432099819',
             '6363688464312800',
-            '4576359945699789'
+            '4576359945699789',
         ]);
     }
 
@@ -41,7 +41,7 @@ class EloTest extends BaseCardTests
     {
         return collect([
             '4576359945699781',
-            '6362970000457014'
+            '6362970000457014',
         ]);
     }
 }

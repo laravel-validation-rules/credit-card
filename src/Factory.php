@@ -2,6 +2,7 @@
 
 namespace LVR\CreditCard;
 
+use LVR\CreditCard\Cards\Elo;
 use LVR\CreditCard\Cards\Jcb;
 use LVR\CreditCard\Cards\Mir;
 use LVR\CreditCard\Cards\Visa;
@@ -14,7 +15,6 @@ use LVR\CreditCard\Cards\Mastercard;
 use LVR\CreditCard\Cards\VisaElectron;
 use LVR\CreditCard\Cards\AmericanExpress;
 use LVR\CreditCard\Cards\Forbrugsforeningen;
-use LVR\CreditCard\Cards\Elo;
 use LVR\CreditCard\Exceptions\CreditCardException;
 
 class Factory
