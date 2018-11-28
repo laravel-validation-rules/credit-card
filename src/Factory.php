@@ -9,6 +9,7 @@ use LVR\CreditCard\Cards\Dankort;
 use LVR\CreditCard\Cards\Maestro;
 use LVR\CreditCard\Cards\UnionPay;
 use LVR\CreditCard\Cards\Discovery;
+use LVR\CreditCard\Cards\Hipercard;
 use LVR\CreditCard\Cards\DinersClub;
 use LVR\CreditCard\Cards\Mastercard;
 use LVR\CreditCard\Cards\VisaElectron;
@@ -29,6 +30,7 @@ class Factory
         DinersClub::class,
         Discovery::class,
         Jcb::class,
+        Hipercard::class,
         Mastercard::class,
         UnionPay::class,
         Visa::class,
