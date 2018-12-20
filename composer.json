@@ -4,7 +4,7 @@
     "type": "library",
     "keywords": [ "laravel", "validation", "credit card", "validator" ],
     "require": {
-        "php": "^7.0",
+        "php": "7.*",
         "illuminate/validation": "^5.5",
         "illuminate/translation": "^5.5"
     },

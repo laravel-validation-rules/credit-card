@@ -41,12 +41,19 @@ class CardExpirationDate implements Rule
     public function passes($attribute, $value)
     {
         try {
+            // This can throw Invalid Date Exception if format is not supported.
+            Carbon::parse($value);
+
             $date = Carbon::createFromFormat($this->format, $value);
 
             return (new ExpirationDateValidator($date->year, $date->month))
                 ->isValid();
         } catch (\InvalidArgumentException $ex) {
             $this->message = static::MSG_CARD_EXPIRATION_DATE_FORMAT_INVALID;
+
+            return false;
+        } catch (\Exception $ex) {
+            $this->message = static::MSG_CARD_EXPIRATION_DATE_INVALID;
 
             return false;
         }
