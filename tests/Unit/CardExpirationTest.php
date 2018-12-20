@@ -162,9 +162,9 @@ class CardExpirationTest extends TestCase
      *
      * @return mixed
      */
-    protected function monthValidator(string $month, ?int $year = null)
+    protected function monthValidator(string $month, $year = null)
     {
-        $year = $year ? $year : Carbon::now()->addYear()->year;
+        $year = $year ?? Carbon::now()->addYear()->year;
 
         return Validator::make(
             [
