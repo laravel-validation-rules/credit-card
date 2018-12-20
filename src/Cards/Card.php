@@ -9,6 +9,7 @@ use LVR\CreditCard\Exceptions\CreditCardTypeException;
 use LVR\CreditCard\Exceptions\CreditCardLengthException;
 use LVR\CreditCard\Exceptions\CreditCardPatternException;
 use LVR\CreditCard\Exceptions\CreditCardChecksumException;
+use LVR\CreditCard\Exceptions\CreditCardCharactersException;
 
 abstract class Card
 {
@@ -90,9 +91,9 @@ abstract class Card
      */
     public function setCardNumber(string $card_number)
     {
-        $card_number = preg_replace('/[^0-9]/', '', $card_number);
+        $this->card_number = preg_replace('/\s+/', '', $card_number);
 
-        $this->card_number = $card_number;
+        $this->isValidCardNumber();
 
         if (! $this->validPattern()) {
             throw new CreditCardPatternException(
@@ -106,6 +107,7 @@ abstract class Card
     /**
      * @return bool
      * @throws \LVR\CreditCard\Exceptions\CreditCardChecksumException
+     * @throws \LVR\CreditCard\Exceptions\CreditCardCharactersException
      * @throws \LVR\CreditCard\Exceptions\CreditCardException
      * @throws \LVR\CreditCard\Exceptions\CreditCardLengthException
      */
@@ -113,6 +115,12 @@ abstract class Card
     {
         if (! $this->card_number) {
             throw new CreditCardException('Card number is not set');
+        }
+
+        if (! is_numeric(preg_replace('/\s+/', '', $this->card_number))) {
+            throw new CreditCardCharactersException(
+                sprintf('Card number "%s" contains invalid characters', $this->card_number)
+            );
         }
 
         if (! $this->validLength()) {

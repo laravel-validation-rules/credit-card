@@ -8,6 +8,10 @@ use LVR\CreditCard\Tests\TestCase;
 use Illuminate\Support\Facades\Validator;
 use LVR\CreditCard\Exceptions\CreditCardException;
 use Illuminate\Foundation\Http\Middleware\TrimStrings;
+use LVR\CreditCard\Exceptions\CreditCardLengthException;
+use LVR\CreditCard\Exceptions\CreditCardPatternException;
+use LVR\CreditCard\Exceptions\CreditCardChecksumException;
+use LVR\CreditCard\Exceptions\CreditCardCharactersException;
 use Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull;
 
 abstract class BaseCardTests extends TestCase
@@ -76,7 +80,7 @@ abstract class BaseCardTests extends TestCase
                     ['card_number' => $number],
                     ['card_number' => new CardNumber]
                 )->passes(),
-                sprintf('The number: "%s" is recognised as invalid but should be valid', $number)
+                sprintf('The number: "%s" is recognized as invalid but should be valid', $number)
             );
         });
     }
@@ -95,7 +99,7 @@ abstract class BaseCardTests extends TestCase
                     ['card_number' => $number],
                     ['card_number' => [new CardNumber]]
                 )->fails(),
-                sprintf('The number: "%s" is recognised as valid but should be invalid', $number)
+                sprintf('The number: "%s" is recognized as valid but should be invalid', $number)
             );
         });
     }
@@ -114,7 +118,7 @@ abstract class BaseCardTests extends TestCase
             $this->assertEquals(
                 CardNumber::MSG_CARD_LENGTH_INVALID,
                 $validator->messages()->first(),
-                sprintf('The number: "%s" is not recognised as invalid length', $number)
+                sprintf('The number: "%s" is not recognized as invalid length', $number)
             );
         });
     }
@@ -157,8 +161,26 @@ abstract class BaseCardTests extends TestCase
                                 false,
                                 sprintf('%s cards ("%s") pattern matches %s card.', $card, $number, $this->instance)
                             );
+                        } catch (CreditCardPatternException $ex) {
+                            $this->assertTrue(
+                                $ex->getMessage() === sprintf('Wrong "%s" card pattern', $number)
+                            );
+                        } catch (CreditCardLengthException $ex) {
+                            $this->assertTrue(
+                                $ex->getMessage() === sprintf('Incorrect "%s" card length', $number)
+                            );
+                        } catch (CreditCardChecksumException $ex) {
+                            $this->assertTrue(
+                                $ex->getMessage() === sprintf('Invalid card number: "%s". Checksum is wrong', $number)
+                            );
+                        } catch (CreditCardCharactersException $ex) {
+                            $this->assertTrue(
+                                $ex->getMessage() === sprintf('Card number "%s" contains invalid characters', $number)
+                            );
                         } catch (CreditCardException $ex) {
-                            $this->assertTrue($ex->getMessage() === sprintf('Wrong "%s" card pattern', $number));
+                            $this->assertTrue(
+                                $ex->getMessage() === 'Card number is not set'
+                            );
                         }
                     }
                 });
