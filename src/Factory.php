@@ -15,6 +15,7 @@ use LVR\CreditCard\Cards\Mastercard;
 use LVR\CreditCard\Cards\VisaElectron;
 use LVR\CreditCard\Cards\AmericanExpress;
 use LVR\CreditCard\Cards\Forbrugsforeningen;
+use LVR\CreditCard\Cards\Elo;
 use LVR\CreditCard\Exceptions\CreditCardException;
 
 class Factory
@@ -29,12 +30,13 @@ class Factory
         AmericanExpress::class,
         DinersClub::class,
         Discovery::class,
-        Jcb::class,
-        Hipercard::class,
+        Jcb::class,      
         Mastercard::class,
         UnionPay::class,
         Visa::class,
         Mir::class,
+        Hipercard::class,
+        Elo::class,
     ];
 
     /**
