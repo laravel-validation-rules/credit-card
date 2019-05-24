@@ -26,6 +26,7 @@ class CardNumber implements Rule
      */
     public function passes($attribute, $value)
     {
+        $value = preg_replace('/[^0-9]/', '', $value);    
         try {
             return Factory::makeFromNumber($value)->isValidCardNumber();
         } catch (CreditCardLengthException $ex) {
