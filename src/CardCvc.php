@@ -21,7 +21,7 @@ class CardCvc implements Rule
     public function __construct($card_number)
     {
         $this->message = static::MSG_CARD_CVC_INVALID;
-        $this->card_number = $card_number;
+        $this->card_number = preg_replace('/[^0-9]/', '', $card_number);
     }
 
     /**
