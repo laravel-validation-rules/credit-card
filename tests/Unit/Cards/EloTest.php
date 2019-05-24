@@ -2,7 +2,7 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
-use LVR\CreditCard\Cards\Visa;
+use LVR\CreditCard\Cards\Elo;
 use Illuminate\Support\Collection;
 
 class EloTest extends BaseCardTests
