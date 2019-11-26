@@ -2,8 +2,8 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
-use LVR\CreditCard\Cards\Visa;
 use Illuminate\Support\Collection;
+use LVR\CreditCard\Cards\Visa;
 
 class VisaTest extends BaseCardTests
 {

@@ -2,11 +2,11 @@
 
 namespace LVR\CreditCard\Tests\Unit;
 
-use LVR\CreditCard\Factory;
 use LVR\CreditCard\Cards\Card;
-use LVR\CreditCard\Tests\TestCase;
-use LVR\CreditCard\Exceptions\CreditCardException;
 use LVR\CreditCard\Exceptions\CreditCardCharactersException;
+use LVR\CreditCard\Exceptions\CreditCardException;
+use LVR\CreditCard\Factory;
+use LVR\CreditCard\Tests\TestCase;
 
 class CardTest extends TestCase
 {

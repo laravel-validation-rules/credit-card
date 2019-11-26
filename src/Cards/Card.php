@@ -2,14 +2,14 @@
 
 namespace LVR\CreditCard\Cards;
 
-use LVR\CreditCard\Exceptions\CreditCardException;
-use LVR\CreditCard\Exceptions\CreditCardCvcException;
-use LVR\CreditCard\Exceptions\CreditCardNameException;
-use LVR\CreditCard\Exceptions\CreditCardTypeException;
-use LVR\CreditCard\Exceptions\CreditCardLengthException;
-use LVR\CreditCard\Exceptions\CreditCardPatternException;
-use LVR\CreditCard\Exceptions\CreditCardChecksumException;
 use LVR\CreditCard\Exceptions\CreditCardCharactersException;
+use LVR\CreditCard\Exceptions\CreditCardChecksumException;
+use LVR\CreditCard\Exceptions\CreditCardCvcException;
+use LVR\CreditCard\Exceptions\CreditCardException;
+use LVR\CreditCard\Exceptions\CreditCardLengthException;
+use LVR\CreditCard\Exceptions\CreditCardNameException;
+use LVR\CreditCard\Exceptions\CreditCardPatternException;
+use LVR\CreditCard\Exceptions\CreditCardTypeException;
 
 abstract class Card
 {

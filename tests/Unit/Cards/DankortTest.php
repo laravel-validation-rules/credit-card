@@ -2,8 +2,8 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
-use LVR\CreditCard\Cards\Dankort;
 use Illuminate\Support\Collection;
+use LVR\CreditCard\Cards\Dankort;
 
 class DankortTest extends BaseCardTests
 {

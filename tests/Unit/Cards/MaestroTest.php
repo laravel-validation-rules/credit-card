@@ -2,8 +2,8 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
-use LVR\CreditCard\Cards\Maestro;
 use Illuminate\Support\Collection;
+use LVR\CreditCard\Cards\Maestro;
 
 class MaestroTest extends BaseCardTests
 {

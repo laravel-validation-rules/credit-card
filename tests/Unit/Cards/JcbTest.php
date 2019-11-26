@@ -2,8 +2,8 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
-use LVR\CreditCard\Cards\Jcb;
 use Illuminate\Support\Collection;
+use LVR\CreditCard\Cards\Jcb;
 
 class JcbTest extends BaseCardTests
 {

@@ -2,20 +2,20 @@
 
 namespace LVR\CreditCard;
 
-use LVR\CreditCard\Cards\Jcb;
-use LVR\CreditCard\Cards\Mir;
-use LVR\CreditCard\Cards\Visa;
-use LVR\CreditCard\Cards\Troy;
-use LVR\CreditCard\Cards\Dankort;
-use LVR\CreditCard\Cards\Maestro;
-use LVR\CreditCard\Cards\UnionPay;
-use LVR\CreditCard\Cards\Discovery;
-use LVR\CreditCard\Cards\Hipercard;
-use LVR\CreditCard\Cards\DinersClub;
-use LVR\CreditCard\Cards\Mastercard;
-use LVR\CreditCard\Cards\VisaElectron;
 use LVR\CreditCard\Cards\AmericanExpress;
+use LVR\CreditCard\Cards\Dankort;
+use LVR\CreditCard\Cards\DinersClub;
+use LVR\CreditCard\Cards\Discovery;
 use LVR\CreditCard\Cards\Forbrugsforeningen;
+use LVR\CreditCard\Cards\Hipercard;
+use LVR\CreditCard\Cards\Jcb;
+use LVR\CreditCard\Cards\Maestro;
+use LVR\CreditCard\Cards\Mastercard;
+use LVR\CreditCard\Cards\Mir;
+use LVR\CreditCard\Cards\Troy;
+use LVR\CreditCard\Cards\UnionPay;
+use LVR\CreditCard\Cards\Visa;
+use LVR\CreditCard\Cards\VisaElectron;
 use LVR\CreditCard\Exceptions\CreditCardException;
 
 class Factory

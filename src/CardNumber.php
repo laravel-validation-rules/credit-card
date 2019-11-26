@@ -3,9 +3,9 @@
 namespace LVR\CreditCard;
 
 use Illuminate\Contracts\Validation\Rule;
+use LVR\CreditCard\Exceptions\CreditCardChecksumException;
 use LVR\CreditCard\Exceptions\CreditCardException;
 use LVR\CreditCard\Exceptions\CreditCardLengthException;
-use LVR\CreditCard\Exceptions\CreditCardChecksumException;
 
 class CardNumber implements Rule
 {

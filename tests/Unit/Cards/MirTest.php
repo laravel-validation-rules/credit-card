@@ -2,8 +2,8 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
-use LVR\CreditCard\Cards\Mir;
 use Illuminate\Support\Collection;
+use LVR\CreditCard\Cards\Mir;
 
 class MirTest extends BaseCardTests
 {

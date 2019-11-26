@@ -2,8 +2,8 @@
 
 namespace LVR\CreditCard;
 
-use LVR\CreditCard\Cards\Card;
 use Illuminate\Contracts\Validation\Rule;
+use LVR\CreditCard\Cards\Card;
 
 class CardCvc implements Rule
 {

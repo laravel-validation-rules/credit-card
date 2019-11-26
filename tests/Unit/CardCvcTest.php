@@ -2,12 +2,12 @@
 
 namespace LVR\CreditCard\Tests\Unit;
 
+use Illuminate\Support\Facades\Validator;
 use LVR\CreditCard\CardCvc;
 use LVR\CreditCard\Cards\Card;
 use LVR\CreditCard\Tests\TestCase;
-use Illuminate\Support\Facades\Validator;
-use LVR\CreditCard\Tests\Unit\Cards\VisaTest;
 use LVR\CreditCard\Tests\Unit\Cards\AmericanExpressTest;
+use LVR\CreditCard\Tests\Unit\Cards\VisaTest;
 
 class CardCvcTest extends TestCase
 {

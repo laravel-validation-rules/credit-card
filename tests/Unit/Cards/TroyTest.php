@@ -2,8 +2,8 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
-use LVR\CreditCard\Cards\Troy;
 use Illuminate\Support\Collection;
+use LVR\CreditCard\Cards\Troy;
 
 class TroyTest extends BaseCardTests
 {
