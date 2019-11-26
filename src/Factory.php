@@ -5,6 +5,7 @@ namespace LVR\CreditCard;
 use LVR\CreditCard\Cards\Jcb;
 use LVR\CreditCard\Cards\Mir;
 use LVR\CreditCard\Cards\Visa;
+use LVR\CreditCard\Cards\Troy;
 use LVR\CreditCard\Cards\Dankort;
 use LVR\CreditCard\Cards\Maestro;
 use LVR\CreditCard\Cards\UnionPay;
@@ -35,6 +36,7 @@ class Factory
         UnionPay::class,
         Visa::class,
         Mir::class,
+        Troy::class,
     ];
 
     /**
