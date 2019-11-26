@@ -53,5 +53,5 @@ class Troy extends Card implements CreditCard
      *
      * @var bool
      */
-    protected $checksum_test = false;
+    protected $checksum_test = true;
 }
