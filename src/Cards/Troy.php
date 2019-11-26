@@ -11,7 +11,7 @@ class Troy extends Card implements CreditCard
      *
      * @var string
      */
-    public static $pattern = '/^9(?!(79200|79289))/'; // 979200 and 979289 are starts for Discovery
+    public static $pattern = '/^9(?!(79200|79289))/'; // 979200 and 979289 are starts for Troy
 
     /**
      * Credit card type.
