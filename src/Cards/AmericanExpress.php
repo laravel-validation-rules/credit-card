@@ -39,7 +39,7 @@ class AmericanExpress extends Card implements CreditCard
      *
      * @var array
      */
-    protected $number_length = [15];
+    protected $number_length = [15, 16];
 
     /**
      * CVC code length's.
