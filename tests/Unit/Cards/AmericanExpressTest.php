@@ -115,6 +115,7 @@ class AmericanExpressTest extends BaseCardTests
             '344566883297843',
             '379811393604866',
             '378167408666270',
+            '3455555555555504',
         ]);
     }
 
