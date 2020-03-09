@@ -5,14 +5,14 @@
     "keywords": [ "laravel", "validation", "credit card", "validator" ],
     "require": {
         "php": "7.*",
-        "illuminate/validation": "^5.5|^6.0",
-        "illuminate/translation": "^5.5|^6.0"
+        "illuminate/validation": "^5.5|^6.0|^7.0",
+        "illuminate/translation": "^5.5|^6.0|^7.0"
     },
     "require-dev": {
         "php": ">=7.0.0",
         "friendsofphp/php-cs-fixer": "~2.5",
         "phpunit/phpunit": "6.2.*",
-        "orchestra/testbench": "^3.5|^4.0"
+        "orchestra/testbench": "^3.5|^4.0|^5.0"
     },
     "autoload": {
         "psr-4": {
