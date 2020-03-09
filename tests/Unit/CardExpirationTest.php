@@ -79,8 +79,6 @@ class CardExpirationTest extends TestCase
         $this->assertTrue($this->dateValidator(date('mY'), 'mY')->passes());
         $this->assertTrue($this->dateValidator(date('Ym'), 'Ym')->passes());
         $this->assertTrue($this->dateValidator(date('YM'), 'YM')->passes());
-        $this->assertTrue($this->dateValidator(date('Yn'), 'Yn')->passes());
-        $this->assertTrue($this->dateValidator(date('yn'), 'yn')->passes());
         $this->assertTrue($this->dateValidator(date('ym'), 'ym')->passes());
 
         // Invalid month
