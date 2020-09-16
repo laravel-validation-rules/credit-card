@@ -5,8 +5,8 @@
     "keywords": [ "laravel", "validation", "credit card", "validator" ],
     "require": {
         "php": "7.*",
-        "illuminate/validation": "^5.5|^6.0|^7.0",
-        "illuminate/translation": "^5.5|^6.0|^7.0"
+        "illuminate/validation": "^5.5|^6.0|^7.0|^8.0",
+        "illuminate/translation": "^5.5|^6.0|^7.0|^8.0"
     },
     "require-dev": {
         "php": ">=7.0.0",
