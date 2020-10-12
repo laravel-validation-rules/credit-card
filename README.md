@@ -95,7 +95,7 @@ $request->validate(
 // CardExpirationDate requires date format
 $request->validate(
     ['expiration_date' => '02-18'],
-    ['expiration_month' => ['required', new LVR\CreditCard\CardExpirationDate('m-y')]]
+    ['expiration_date' => ['required', new LVR\CreditCard\CardExpirationDate('MM-YY')]]
 );
 ```
 #### Directly
