@@ -17,7 +17,7 @@ class CardTest extends TestCase
 
         Factory::makeFromNumber($input);
     }
-    
+
     public function badStrings()
     {
         return ['empty string' => [''], 'null' => [null]];
