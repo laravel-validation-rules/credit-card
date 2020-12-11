@@ -20,7 +20,7 @@ class CardTest extends TestCase
     
     public function badStrings()
     {
-        return ['empty string' => [['']], 'null' => [[null]]];
+        return ['empty string' => [''], 'null' => [null]];
     }
 
     /** @test **/
