@@ -2,6 +2,7 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
+use Illuminate\Support\Str;
 use LVR\CreditCard\CardNumber;
 use Illuminate\Support\Collection;
 use LVR\CreditCard\Tests\TestCase;
@@ -13,7 +14,6 @@ use LVR\CreditCard\Exceptions\CreditCardPatternException;
 use LVR\CreditCard\Exceptions\CreditCardChecksumException;
 use LVR\CreditCard\Exceptions\CreditCardCharactersException;
 use Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull;
-use Illuminate\Support\Str;
 
 abstract class BaseCardTests extends TestCase
 {
