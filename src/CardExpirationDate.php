@@ -57,8 +57,6 @@ class CardExpirationDate implements Rule
 
             return false;
         }
-
-        return false;
     }
 
     /**
