@@ -3,12 +3,12 @@
 namespace LVR\CreditCard\Tests\Unit;
 
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Validator;
-use LVR\CreditCard\CardExpirationDate;
-use LVR\CreditCard\CardExpirationMonth;
-use LVR\CreditCard\CardExpirationYear;
-use LVR\CreditCard\ExpirationDateValidator;
 use LVR\CreditCard\Tests\TestCase;
+use LVR\CreditCard\CardExpirationDate;
+use LVR\CreditCard\CardExpirationYear;
+use LVR\CreditCard\CardExpirationMonth;
+use Illuminate\Support\Facades\Validator;
+use LVR\CreditCard\ExpirationDateValidator;
 
 class CardExpirationTest extends TestCase
 {
