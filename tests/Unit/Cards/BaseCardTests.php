@@ -2,18 +2,18 @@
 
 namespace LVR\CreditCard\Tests\Unit\Cards;
 
+use Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull;
+use Illuminate\Foundation\Http\Middleware\TrimStrings;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use LVR\CreditCard\CardNumber;
-use Illuminate\Support\Collection;
-use LVR\CreditCard\Tests\TestCase;
-use Illuminate\Support\Facades\Validator;
+use LVR\CreditCard\Exceptions\CreditCardCharactersException;
+use LVR\CreditCard\Exceptions\CreditCardChecksumException;
 use LVR\CreditCard\Exceptions\CreditCardException;
-use Illuminate\Foundation\Http\Middleware\TrimStrings;
 use LVR\CreditCard\Exceptions\CreditCardLengthException;
 use LVR\CreditCard\Exceptions\CreditCardPatternException;
-use LVR\CreditCard\Exceptions\CreditCardChecksumException;
-use LVR\CreditCard\Exceptions\CreditCardCharactersException;
-use Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull;
+use LVR\CreditCard\Tests\TestCase;
 
 abstract class BaseCardTests extends TestCase
 {
