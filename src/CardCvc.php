@@ -3,7 +3,6 @@
 namespace LVR\CreditCard;
 
 use Illuminate\Contracts\Validation\Rule;
-use LVR\CreditCard\Cards\Card;
 
 class CardCvc implements Rule
 {
