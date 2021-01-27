@@ -6,6 +6,7 @@ use Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull;
 use Illuminate\Foundation\Http\Middleware\TrimStrings;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use LVR\CreditCard\CardNumber;
 use LVR\CreditCard\Exceptions\CreditCardCharactersException;
 use LVR\CreditCard\Exceptions\CreditCardChecksumException;
@@ -57,7 +58,7 @@ abstract class BaseCardTests extends TestCase
     {
         $this->expectException(CreditCardException::class);
         (new $this->instance)
-            ->setCardNumber(str_random(16))
+            ->setCardNumber(Str::random(16))
             ->isValidCardNumber();
     }
 
@@ -92,7 +93,7 @@ abstract class BaseCardTests extends TestCase
         $this->withoutMiddleware(ConvertEmptyStringsToNull::class);
 
         collect([
-            str_random(16),
+            Str::random(16),
         ])->each(function ($number) {
             $this->assertTrue(
                 Validator::make(
