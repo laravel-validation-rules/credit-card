@@ -55,11 +55,6 @@ class CardExpirationTest extends TestCase
         // Future month
         $this->assertTrue($this->monthValidator(Carbon::now()->addMonth()->month)->passes());
 
-        // Current year, past month
-        $this->assertTrue(
-            $this->monthValidator(Carbon::now()->subMonth()->month, Carbon::now()->year)->passes()
-        );
-
         // Past year, current month
         $this->assertFalse(
             $this->monthValidator(Carbon::now()->month, Carbon::now()->subYear()->year)->passes()
