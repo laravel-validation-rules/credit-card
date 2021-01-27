@@ -63,7 +63,7 @@ abstract class Card
     protected $checksum_test;
 
     /**
-     * @var string
+     * @var string|null
      */
     private $card_number;
 
