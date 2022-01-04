@@ -6,7 +6,9 @@ use LVR\CreditCard\Contracts\CreditCard;
 
 /**
  * Class Mir.
+ *
  * @link https://nspk.com/
+ *
  * @author eugene.sazykin@gmail.com
  */
 class Mir extends Card implements CreditCard

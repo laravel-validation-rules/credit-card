@@ -40,9 +40,9 @@ class Factory
     ];
 
     /**
-     * @param string|mixed $card_number
-     *
+     * @param  string|mixed  $card_number
      * @return \LVR\CreditCard\Cards\Card
+     *
      * @throws \LVR\CreditCard\Exceptions\CreditCardException
      */
     public static function makeFromNumber($card_number)
@@ -51,9 +51,9 @@ class Factory
     }
 
     /**
-     * @param string|mixed $card_number
-     *
+     * @param  string|mixed  $card_number
      * @return mixed
+     *
      * @throws \LVR\CreditCard\Exceptions\CreditCardException
      */
     protected static function determineCardByNumber($card_number)

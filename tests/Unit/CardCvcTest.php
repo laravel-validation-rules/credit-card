@@ -59,10 +59,8 @@ class CardCvcTest extends TestCase
     }
 
     /**
-     * @param string|int $cvc
-     *
-     * @param null $testCard
-     *
+     * @param  string|int  $cvc
+     * @param  null  $testCard
      * @return mixed
      */
     protected function validator($cvc, $testCard = null)

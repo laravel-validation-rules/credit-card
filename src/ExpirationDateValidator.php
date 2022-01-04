@@ -19,8 +19,8 @@ class ExpirationDateValidator
     /**
      * ExpirationDateValidator constructor.
      *
-     * @param string $year
-     * @param string $month
+     * @param  string  $year
+     * @param  string  $month
      */
     public function __construct(string $year, string $month)
     {
@@ -29,9 +29,8 @@ class ExpirationDateValidator
     }
 
     /**
-     * @param string $year
-     * @param string $month
-     *
+     * @param  string  $year
+     * @param  string  $month
      * @return mixed
      */
     public static function validate(string $year, string $month)
@@ -51,7 +50,6 @@ class ExpirationDateValidator
 
     /**
      * @param $year
-     *
      * @return $this
      */
     protected function setYear($year)

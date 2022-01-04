@@ -141,8 +141,7 @@ class CardExpirationTest extends TestCase
     }
 
     /**
-     * @param string $year
-     *
+     * @param  string  $year
      * @return mixed
      */
     protected function yearValidator(string $year)
@@ -156,8 +155,8 @@ class CardExpirationTest extends TestCase
     }
 
     /**
-     * @param string $month
-     * @param null $year
+     * @param  string  $month
+     * @param  null  $year
      * @return mixed
      */
     protected function monthValidator(string $month, $year = null)
@@ -178,10 +177,8 @@ class CardExpirationTest extends TestCase
     }
 
     /**
-     * @param string $date
-     *
-     * @param string $format
-     *
+     * @param  string  $date
+     * @param  string  $format
      * @return mixed
      */
     protected function dateValidator(string $date, string $format)

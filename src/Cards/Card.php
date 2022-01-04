@@ -70,7 +70,7 @@ abstract class Card
     /**
      * Card constructor.
      *
-     * @param string $card_number
+     * @param  string  $card_number
      *
      * @throws \LVR\CreditCard\Exceptions\CreditCardException
      */
@@ -84,9 +84,9 @@ abstract class Card
     }
 
     /**
-     * @param string $card_number
-     *
+     * @param  string  $card_number
      * @return $this
+     *
      * @throws \LVR\CreditCard\Exceptions\CreditCardPatternException
      */
     public function setCardNumber(string $card_number)
@@ -106,6 +106,7 @@ abstract class Card
 
     /**
      * @return bool
+     *
      * @throws \LVR\CreditCard\Exceptions\CreditCardChecksumException
      * @throws \LVR\CreditCard\Exceptions\CreditCardCharactersException
      * @throws \LVR\CreditCard\Exceptions\CreditCardException
@@ -164,7 +165,6 @@ abstract class Card
 
     /**
      * @param $cvc
-     *
      * @return bool
      */
     public function isValidCvc($cvc)
@@ -176,10 +176,8 @@ abstract class Card
     /**
      * Check CVS length against possible lengths.
      *
-     * @param string|int $cvc
-     *
-     * @param array $available_lengths
-     *
+     * @param  string|int  $cvc
+     * @param  array  $available_lengths
      * @return bool
      */
     public static function isValidCvcLength($cvc, array $available_lengths = [3, 4])

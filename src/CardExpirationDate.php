@@ -22,7 +22,7 @@ class CardExpirationDate implements Rule
     /**
      * CardExpirationDate constructor.
      *
-     * @param string $format Date format
+     * @param  string  $format  Date format
      */
     public function __construct(string $format)
     {
@@ -33,9 +33,8 @@ class CardExpirationDate implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string $attribute
-     * @param  mixed $value
-     *
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)

@@ -18,7 +18,7 @@ class CardExpirationYear implements Rule
     /**
      * CardExpirationYear constructor.
      *
-     * @param string $month
+     * @param  string  $month
      */
     public function __construct($month)
     {
@@ -28,9 +28,8 @@ class CardExpirationYear implements Rule
     /**
      * Determine if the validation rule passes.
      *
-     * @param  string $attribute
-     * @param  mixed $value
-     *
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)

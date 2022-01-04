@@ -19,7 +19,8 @@ class NewCardImplementationTest extends TestCase
         // Not set
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern;
                 protected $type;
                 protected $name;
@@ -36,7 +37,8 @@ class NewCardImplementationTest extends TestCase
         // Not debit or credit
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern;
                 protected $type = 'new';
                 protected $name;
@@ -53,7 +55,8 @@ class NewCardImplementationTest extends TestCase
         // Debit
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern;
                 protected $type = 'debit';
                 protected $name;
@@ -72,7 +75,8 @@ class NewCardImplementationTest extends TestCase
         // Credit
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern;
                 protected $type = 'credit';
                 protected $name;
@@ -95,7 +99,8 @@ class NewCardImplementationTest extends TestCase
         // Not set
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern;
                 protected $type = 'credit';
                 protected $name;
@@ -114,7 +119,8 @@ class NewCardImplementationTest extends TestCase
         // Not string
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern;
                 protected $type = 'credit';
                 protected $name = ['name'];
@@ -133,7 +139,8 @@ class NewCardImplementationTest extends TestCase
         // OK
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern;
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -156,7 +163,8 @@ class NewCardImplementationTest extends TestCase
         // Not set
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern;
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -175,7 +183,8 @@ class NewCardImplementationTest extends TestCase
         // Not string
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = ['array'];
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -194,7 +203,8 @@ class NewCardImplementationTest extends TestCase
         // OK
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -217,7 +227,8 @@ class NewCardImplementationTest extends TestCase
         // Not set
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -236,7 +247,8 @@ class NewCardImplementationTest extends TestCase
         // Not array
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -255,7 +267,8 @@ class NewCardImplementationTest extends TestCase
         // OK
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -278,7 +291,8 @@ class NewCardImplementationTest extends TestCase
         // Not set
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -297,7 +311,8 @@ class NewCardImplementationTest extends TestCase
         // Not array
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -316,7 +331,8 @@ class NewCardImplementationTest extends TestCase
         // OK
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -339,7 +355,8 @@ class NewCardImplementationTest extends TestCase
         // Not set
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -358,7 +375,8 @@ class NewCardImplementationTest extends TestCase
         // Not bool
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
@@ -377,7 +395,8 @@ class NewCardImplementationTest extends TestCase
         // OK
         $success = true;
         try {
-            $newCard = new class extends Card {
+            $newCard = new class extends Card
+            {
                 public static $pattern = '/^123/';
                 protected $type = 'credit';
                 protected $name = 'gold';
