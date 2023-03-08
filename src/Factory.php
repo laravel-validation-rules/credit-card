@@ -6,6 +6,7 @@ use LVR\CreditCard\Cards\AmericanExpress;
 use LVR\CreditCard\Cards\Dankort;
 use LVR\CreditCard\Cards\DinersClub;
 use LVR\CreditCard\Cards\Discovery;
+use LVR\CreditCard\Cards\Elo;
 use LVR\CreditCard\Cards\Forbrugsforeningen;
 use LVR\CreditCard\Cards\Hipercard;
 use LVR\CreditCard\Cards\Jcb;
@@ -26,6 +27,7 @@ class Factory
         Forbrugsforeningen::class,
         Maestro::class,
         VisaElectron::class,
+        Elo::class,
         // Debit cards
         AmericanExpress::class,
         DinersClub::class,
