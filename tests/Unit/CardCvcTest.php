@@ -17,6 +17,9 @@ class CardCvcTest extends TestCase
         $this->assertTrue($this->validator('243')->passes());
         $this->assertTrue($this->validator('1234')->passes());
 
+        $this->assertTrue($this->validator('1234', new AmericanExpressTest)->passes());
+        $this->assertFalse($this->validator('243', new AmericanExpressTest)->passes()); // American Express supports only 4 digits
+
         $this->assertTrue($this->validator('243', new VisaTest)->passes());
         $this->assertTrue($this->validator('1234', new VisaTest)->fails()); // Visa supports only 3 digits
 
