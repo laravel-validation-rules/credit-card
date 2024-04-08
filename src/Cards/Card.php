@@ -164,7 +164,7 @@ abstract class Card
     }
 
     /**
-     * @param $cvc
+     * @param  $cvc
      * @return bool
      */
     public function isValidCvc($cvc)
