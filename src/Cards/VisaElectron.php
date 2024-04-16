@@ -32,7 +32,7 @@ class VisaElectron extends Card implements CreditCard
      *
      * @var string
      */
-    protected $cleanName = 'Visa Electron';
+    protected $brand = 'Visa Electron';
 
     /**
      * Card number length's.
