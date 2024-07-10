@@ -7,6 +7,7 @@ use LVR\CreditCard\CardCvc;
 use LVR\CreditCard\Cards\Card;
 use LVR\CreditCard\Tests\TestCase;
 use LVR\CreditCard\Tests\Unit\Cards\AmericanExpressTest;
+use LVR\CreditCard\Tests\Unit\Cards\BaseCardTests;
 use LVR\CreditCard\Tests\Unit\Cards\VisaTest;
 
 class CardCvcTest extends TestCase
@@ -14,9 +15,6 @@ class CardCvcTest extends TestCase
     /** @test **/
     public function it_check_cvc_by_credit_card()
     {
-        $this->assertTrue($this->validator('243')->passes());
-        $this->assertTrue($this->validator('1234')->passes());
-
         $this->assertTrue($this->validator('1234', new AmericanExpressTest)->passes());
         $this->assertFalse($this->validator('243', new AmericanExpressTest)->passes()); // American Express supports only 4 digits
 
@@ -63,15 +61,11 @@ class CardCvcTest extends TestCase
 
     /**
      * @param  string|int  $cvc
-     * @param  null  $testCard
+     * @param  BaseCardTests  $testCard
      * @return mixed
      */
-    protected function validator($cvc, $testCard = null)
+    protected function validator($cvc, $testCard)
     {
-        if (! $testCard) {
-            $testCard = new AmericanExpressTest();
-        }
-
         return Validator::make(
             [
                 'cvc' => $cvc,

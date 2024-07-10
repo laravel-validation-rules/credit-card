@@ -1,0 +1,51 @@
+name: tests
+
+on:
+  pull_request:
+  push:
+    branches: [ master ]
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - 7.0
+          - 7.1
+          - 7.2
+          - 7.3
+          - 7.4
+          - 8.0
+
+    env:
+      EXECUTE_COVERAGE: ${{ matrix.php-version == '8.0' }}
+      CLOVER_PATH: "logs/clover.xml"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          coverage: xdebug
+
+      - if: matrix.php-version == '7.0' || matrix.php-version == '7.1'
+        run: composer config --no-plugins allow-plugins.kylekatarnls/update-helper true
+
+      - run: composer install --no-interaction --no-scripts --no-suggest --no-progress --optimize-autoloader
+
+      - if: env.EXECUTE_COVERAGE == 'true'
+        run: vendor/bin/phpunit --coverage-text --coverage-clover ${{ env.CLOVER_PATH }}
+
+      - if: env.EXECUTE_COVERAGE != 'true'
+        run: vendor/bin/phpunit
+
+      - if: env.EXECUTE_COVERAGE == 'true'
+        # This fails in forks
+        continue-on-error: true
+        run: |
+          wget https://scrutinizer-ci.com/ocular.phar
+          php ocular.phar code-coverage:upload --format=php-clover coverage.clover
