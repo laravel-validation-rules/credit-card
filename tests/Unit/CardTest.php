@@ -10,7 +10,11 @@ use LVR\CreditCard\Tests\TestCase;
 
 class CardTest extends TestCase
 {
-    /** @test @dataProvider badStrings **/
+    /**
+     * @test
+     *
+     * @dataProvider badStrings
+     */
     public function it_expects_card_number($input)
     {
         $this->expectException(CreditCardException::class);
@@ -18,7 +22,7 @@ class CardTest extends TestCase
         Factory::makeFromNumber($input);
     }
 
-    public function badStrings()
+    public static function badStrings()
     {
         return ['empty string' => [''], 'null' => [null]];
     }
