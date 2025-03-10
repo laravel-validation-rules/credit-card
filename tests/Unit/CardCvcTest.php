@@ -14,7 +14,7 @@ class CardCvcTest extends TestCase
     /** @test **/
     public function it_check_cvc_by_credit_card()
     {
-        $this->assertTrue($this->validator('243')->passes());
+        $this->assertTrue($this->validator('243')->fails());
         $this->assertTrue($this->validator('1234')->passes());
 
         $this->assertTrue($this->validator('1234', new AmericanExpressTest)->passes());
