@@ -18,7 +18,7 @@ class EloTest extends BaseCardTests
             '6363685305150464',
             '6363682833437620',
             '4514165077816223',
-            '4389354567568609'
+            '4389354567568609',
         ]);
     }
 
@@ -30,7 +30,7 @@ class EloTest extends BaseCardTests
         return collect([
             '6011111',
             '601111111111111',
-            '60110009901394241'
+            '60110009901394241',
         ]);
     }
 
@@ -41,7 +41,7 @@ class EloTest extends BaseCardTests
     {
         return collect([
             '6011111111111118',
-            '6011000990139423'
+            '6011000990139423',
         ]);
     }
 }
