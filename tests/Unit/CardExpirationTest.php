@@ -115,6 +115,12 @@ class CardExpirationTest extends TestCase
         $timestamp = strtotime('+1 year');
         $d = date('Y', $timestamp).'-'.date('m', $timestamp);
         $this->assertTrue($this->dateValidator($d, 'Y-m')->passes());
+
+        // Month Overflow
+        $timestamp = strtotime('-1 year');
+        $overflow = date('m', $timestamp) + 12;
+        $d = date('Y', $timestamp).'-'.$overflow;
+        $this->assertFalse($this->dateValidator($d, 'Y-m')->passes());
     }
 
     /** @test **/
