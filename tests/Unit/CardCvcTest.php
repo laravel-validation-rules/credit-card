@@ -23,6 +23,14 @@ class CardCvcTest extends TestCase
         $this->assertTrue($this->validator('243', new VisaTest)->passes());
         $this->assertTrue($this->validator('1234', new VisaTest)->fails()); // Visa supports only 3 digits
 
+        // Fails with non-digit characters
+        $this->assertTrue($this->validator('1e3', new VisaTest)->fails());
+        $this->assertTrue($this->validator('-12', new VisaTest)->fails());
+        $this->assertTrue($this->validator(['123'], new VisaTest)->fails());
+        $this->assertTrue($this->validator("123\n", new AmericanExpressTest)->fails());
+        $this->assertTrue($this->validator('1e30', new AmericanExpressTest)->fails());
+        $this->assertTrue($this->validator(12, new VisaTest)->fails());
+
         // Fails with bad card number
         $this->assertTrue(
             Validator::make(
@@ -40,12 +48,26 @@ class CardCvcTest extends TestCase
         $this->assertTrue(Card::isValidCvcLength('5678'));
         $this->assertTrue(Card::isValidCvcLength(321));
         $this->assertTrue(Card::isValidCvcLength(1234));
+        $this->assertTrue(Card::isValidCvcLength('012'));
 
         // Empty
         $this->assertFalse(Card::isValidCvcLength(''));
 
         // Non digits
         $this->assertFalse(Card::isValidCvcLength('12e'));
+        $this->assertFalse(Card::isValidCvcLength('1e3'));
+        $this->assertFalse(Card::isValidCvcLength('1.2'));
+        $this->assertFalse(Card::isValidCvcLength('-12'));
+        $this->assertFalse(Card::isValidCvcLength('+12'));
+        $this->assertFalse(Card::isValidCvcLength(' 12'));
+        $this->assertFalse(Card::isValidCvcLength('12 '));
+        $this->assertFalse(Card::isValidCvcLength('0x1'));
+        $this->assertFalse(Card::isValidCvcLength("123\n"));
+        $this->assertFalse(Card::isValidCvcLength('1e30'));
+        $this->assertFalse(Card::isValidCvcLength(-12));
+        $this->assertFalse(Card::isValidCvcLength(1.5));
+        $this->assertFalse(Card::isValidCvcLength(null));
+        $this->assertFalse(Card::isValidCvcLength(['123']));
 
         // Less than 3 digits
         $this->assertFalse(Card::isValidCvcLength('12'));

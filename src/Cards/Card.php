@@ -169,12 +169,11 @@ abstract class Card
      */
     public function isValidCvc($cvc)
     {
-        return is_numeric($cvc)
-            && self::isValidCvcLength($cvc, $this->cvc_length);
+        return self::isValidCvcLength($cvc, $this->cvc_length);
     }
 
     /**
-     * Check CVS length against possible lengths.
+     * Check CVC consists of digits only and its length is one of possible lengths.
      *
      * @param  string|int  $cvc
      * @param  array  $available_lengths
@@ -182,8 +181,12 @@ abstract class Card
      */
     public static function isValidCvcLength($cvc, array $available_lengths = [3, 4])
     {
-        return
-            is_numeric($cvc)
+        if (is_int($cvc)) {
+            $cvc = (string) $cvc;
+        }
+
+        return is_string($cvc)
+            && ctype_digit($cvc)
             && in_array(strlen($cvc), $available_lengths, true);
     }
 
