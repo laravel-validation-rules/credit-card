@@ -12,6 +12,13 @@ use LVR\CreditCard\Tests\TestCase;
 
 class CardExpirationTest extends TestCase
 {
+    protected function tearDown(): void
+    {
+        Carbon::setTestNow();
+
+        parent::tearDown();
+    }
+
     /** @test  */
     public function it_checks_expiration_year()
     {
@@ -121,6 +128,54 @@ class CardExpirationTest extends TestCase
         $overflow = date('m', $timestamp) + 12;
         $d = date('Y', $timestamp).'-'.$overflow;
         $this->assertFalse($this->dateValidator($d, 'Y-m')->passes());
+    }
+
+    /** @test */
+    public function it_does_not_overflow_short_months_at_the_end_of_month()
+    {
+        // Parsing without a day used to take today's day, so on the 29th-31st
+        // a shorter month rolled over into the next one (e.g. Feb 31 -> Mar 3).
+        // 2026 is not a leap year: Jan 28 is the last day without rollover
+        // (Feb 28 exists), Jan 29 is the first day with it (Feb 29 -> Mar 1).
+        Carbon::setTestNow('2026-01-28 12:00:00');
+
+        $this->assertTrue($this->dateValidator('02/26', 'm/y')->passes());
+        $this->assertTrue($this->dateValidator('2026-02', 'Y-m')->passes());
+
+        Carbon::setTestNow('2026-01-29 12:00:00');
+
+        $this->assertTrue($this->dateValidator('02/26', 'm/y')->passes());
+        $this->assertTrue($this->dateValidator('2026-02', 'Y-m')->passes());
+
+        Carbon::setTestNow('2026-01-31 12:00:00');
+
+        $this->assertTrue($this->dateValidator('02/26', 'm/y')->passes());
+        $this->assertTrue($this->dateValidator('2026-02', 'Y-m')->passes());
+        $this->assertTrue($this->dateValidator('2026-01', 'Y-m')->passes());
+        $this->assertFalse($this->dateValidator('2025-12', 'Y-m')->passes());
+        $this->assertTrue(ExpirationDateValidator::validate('2026', '02'));
+        $this->assertTrue(ExpirationDateValidator::validate('2026', '01'));
+        $this->assertFalse(ExpirationDateValidator::validate('2025', '12'));
+
+        Carbon::setTestNow('2026-03-31 12:00:00');
+
+        $this->assertTrue($this->dateValidator('04/26', 'm/y')->passes());
+        $this->assertTrue($this->dateValidator('2026-04', 'Y-m')->passes());
+        $this->assertFalse($this->dateValidator('2026-02', 'Y-m')->passes());
+        $this->assertTrue(ExpirationDateValidator::validate('2026', '04'));
+        $this->assertFalse(ExpirationDateValidator::validate('2026', '02'));
+    }
+
+    /** @test */
+    public function it_is_valid_through_the_last_moment_of_the_expiration_month()
+    {
+        Carbon::setTestNow('2026-12-31 23:59:59');
+        $this->assertTrue(ExpirationDateValidator::validate('2026', '12'));
+        $this->assertTrue($this->dateValidator('2026-12', 'Y-m')->passes());
+
+        Carbon::setTestNow('2027-01-01 00:00:00');
+        $this->assertFalse(ExpirationDateValidator::validate('2026', '12'));
+        $this->assertFalse($this->dateValidator('2026-12', 'Y-m')->passes());
     }
 
     /** @test **/
