@@ -99,8 +99,9 @@ class ExpirationDateValidator
      */
     protected function isFeatureDate()
     {
-        return Carbon::now()->startOfDay()->lte(
-            Carbon::createFromFormat('Y-m', $this->year.'-'.$this->month())->endOfDay()
+        // A card is valid through the last day of its expiration month.
+        return Carbon::now()->lte(
+            Carbon::create((int) $this->year, (int) $this->month(), 1)->endOfMonth()
         );
     }
 }

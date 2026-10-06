@@ -43,7 +43,10 @@ class CardExpirationDate implements Rule
             // This can throw Invalid Date Exception if format is not supported.
             Carbon::parse($value);
 
-            $date = Carbon::createFromFormat($this->format, $value);
+            // "!" resets fields missing from the format (e.g. the day) instead of
+            // taking them from the current date, which would otherwise overflow
+            // short months on the 29th-31st (e.g. "02/30" parsed on Jan 31 -> Mar 2030).
+            $date = Carbon::createFromFormat('!'.$this->format, $value);
 
             // to avoid month overflow
             // eg: Carbon::createFromFormat('2020', 'my')->format('my') --> '0821'
