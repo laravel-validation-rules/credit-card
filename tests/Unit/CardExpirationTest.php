@@ -196,6 +196,22 @@ class CardExpirationTest extends TestCase
         $this->assertFalse($this->dateValidator('2026-12', 'Y-m')->passes());
     }
 
+    public function test_it_fails_without_a_type_error_on_non_string_input()
+    {
+        $nextYear = (string) Carbon::now()->addYear()->year;
+
+        foreach ([null, ['12'], 12.5] as $input) {
+            // The other field is missing or not a string
+            $this->assertFalse($this->ruleValidator('12', new CardExpirationMonth($input))->passes());
+            $this->assertFalse($this->ruleValidator($nextYear, new CardExpirationYear($input))->passes());
+
+            // The value itself is not a string
+            $this->assertFalse($this->ruleValidator($input, new CardExpirationMonth($nextYear))->passes());
+            $this->assertFalse($this->ruleValidator($input, new CardExpirationYear('12'))->passes());
+            $this->assertFalse($this->ruleValidator($input, new CardExpirationDate('m/y'))->passes());
+        }
+    }
+
     /** @test **/
     public function it_can_be_called_directly()
     {
@@ -217,6 +233,18 @@ class CardExpirationTest extends TestCase
         );
 
         $this->assertTrue($validator->passes());
+    }
+
+    /**
+     * Validate a raw value (not cast to string) with the given rule.
+     *
+     * @param  mixed  $value
+     * @param  \Illuminate\Contracts\Validation\Rule  $rule
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function ruleValidator($value, $rule)
+    {
+        return Validator::make(['value' => $value], ['value' => [$rule]]);
     }
 
     /**
