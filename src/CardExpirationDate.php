@@ -39,6 +39,13 @@ class CardExpirationDate implements Rule
      */
     public function passes($attribute, $value)
     {
+        // Request input can be an array or null; Carbon would throw a TypeError.
+        if (! is_string($value) && ! is_int($value)) {
+            $this->message = static::MSG_CARD_EXPIRATION_DATE_FORMAT_INVALID;
+
+            return false;
+        }
+
         try {
             // "!" resets fields missing from the format (e.g. the day) instead of
             // taking them from the current date, which would otherwise overflow

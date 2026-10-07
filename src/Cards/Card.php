@@ -118,7 +118,8 @@ abstract class Card
             throw new CreditCardException('Card number is not set');
         }
 
-        if (! is_numeric(preg_replace('/\s+/', '', $this->card_number))) {
+        // is_numeric() would accept "4.1..." or "4e1...", which break the checksum calculation.
+        if (! ctype_digit($this->card_number)) {
             throw new CreditCardCharactersException(
                 sprintf('Card number "%s" contains invalid characters', $this->card_number)
             );
