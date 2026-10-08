@@ -40,9 +40,6 @@ class CardExpirationDate implements Rule
     public function passes($attribute, $value)
     {
         try {
-            // This can throw Invalid Date Exception if format is not supported.
-            Carbon::parse($value);
-
             // "!" resets fields missing from the format (e.g. the day) instead of
             // taking them from the current date, which would otherwise overflow
             // short months on the 29th-31st (e.g. "02/30" parsed on Jan 31 -> Mar 2030).

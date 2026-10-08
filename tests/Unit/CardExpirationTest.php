@@ -130,6 +130,24 @@ class CardExpirationTest extends TestCase
         $this->assertFalse($this->dateValidator($d, 'Y-m')->passes());
     }
 
+    public function test_it_accepts_valid_dates_in_formats_carbon_parse_cannot_read()
+    {
+        // Carbon::parse() used to be called before createFromFormat() and threw
+        // for these values, so they were rejected whatever format was given.
+        Carbon::setTestNow('2026-10-08 12:00:00');
+
+        $this->assertTrue($this->dateValidator('12/2030', 'm/Y')->passes());
+        $this->assertTrue($this->dateValidator('01/2027', 'm/Y')->passes());
+        $this->assertTrue($this->dateValidator('12-30', 'm-y')->passes());
+        $this->assertTrue($this->dateValidator('05/40', 'm/y')->passes());
+
+        // Still rejected: wrong format, invalid month, past date
+        $this->assertFalse($this->dateValidator('12/30', 'm/Y')->passes());
+        $this->assertFalse($this->dateValidator('13/2030', 'm/Y')->passes());
+        $this->assertFalse($this->dateValidator('12/2030 ', 'm/Y')->passes());
+        $this->assertFalse($this->dateValidator('09/2026', 'm/Y')->passes());
+    }
+
     /** @test */
     public function it_does_not_overflow_short_months_at_the_end_of_month()
     {
