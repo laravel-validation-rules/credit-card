@@ -40,6 +40,15 @@ class CardCvcTest extends TestCase
         );
     }
 
+    public function test_it_fails_without_a_type_error_when_card_number_is_not_a_string()
+    {
+        foreach ([['4111111111111111'], null] as $cardNumber) {
+            $this->assertTrue(
+                Validator::make(['cvc' => '123'], ['cvc' => [new CardCvc($cardNumber)]])->fails()
+            );
+        }
+    }
+
     /** @test  */
     public function it_checks_cvc_code_length()
     {

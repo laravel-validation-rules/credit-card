@@ -49,7 +49,12 @@ class Factory
      */
     public static function makeFromNumber($card_number)
     {
-        return self::determineCardByNumber($card_number);
+        // Request input can be an array or null; preg_match() would throw a TypeError.
+        if (! is_string($card_number) && ! is_int($card_number)) {
+            throw new CreditCardException('Card number must be a string.');
+        }
+
+        return self::determineCardByNumber((string) $card_number);
     }
 
     /**

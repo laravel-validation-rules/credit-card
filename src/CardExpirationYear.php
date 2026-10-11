@@ -34,6 +34,13 @@ class CardExpirationYear implements Rule
      */
     public function passes($attribute, $value)
     {
+        // Request input can be an array or null; ExpirationDateValidator only accepts strings.
+        foreach ([$value, $this->month] as $part) {
+            if (! is_string($part) && ! is_int($part)) {
+                return false;
+            }
+        }
+
         return (new ExpirationDateValidator($value, $this->month))
             ->isValid();
     }
